@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gallery</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
+    </head>
+    <body>
+        <!--start navigation-->
+		<nav>
+			<div class="logo"></div>
+			<div class="menu-icon">
+				<i class="fas fa-bars"></i>
+			</div>
+			<ul class="links">
+				<!--nav links go here-->
+			</ul>
+		</nav>
+		<!--end navigation-->
+       <section class="gallery-section">
+            <header class="section-header">
+                <h2>gallery</h2>
+                <div class="underline"></div>
+            </header>
+            <div class="gallery">
+                <img src="./assets/images/1.jpg">
+                <img src="./assets/images/2.jpg">
+                <img src="./assets/images/3.jpg">
+                <img src="./assets/images/4.jpg">
+                <img src="./assets/images/5.jpg">
+                <img src="./assets/images/6.jpg">
+                <img src="./assets/images/7.jpg">
+                <img src="./assets/images/8.jpg">
+            </div>
+            <div id="gallery-modal" class="gallery-modal">
+            	<span class="gallery-close-btn">
+            		<i class="fas fa-times"></i>
+            	</span>
+            	<img id="gallery-modal-img" src="./assets/images/1.jpg">
+            	<div class="gallery-modal-controls">
+            		<span class="gallery-control-btn next-btn"><i class="fas fa-chevron-right"></i></span>
+            		<span class="gallery-control-btn prev-btn"><i class="fas fa-chevron-left"></i></span>
+            	</div>
+            </div>
+       </section>
+       <!--start footer-->
+		<footer>
+			<!--footer deatils go here-->
+		</footer>
+		<!--end footer-->
+		<!--back to top button-->
+		<div class="back-to-top">
+			<a href="#top"><i class="fas fa-arrow-up"></i></a>
+		</div>
+
+        <!--javascript-->
+        <script src="./assets/js/utils.js"></script>
+        <script>
+        	const galleryModal = document.getElementById("gallery-modal");
+        	const galleryImages = document.querySelectorAll(".gallery img");
+        	const modalImg = document.getElementById("gallery-modal-img");
+        	const controlBtns = document.querySelector(".gallery-modal-controls");
+        	const closeBtn = document.querySelector(".gallery-close-btn");
+
+        	//do not display control btns if only one image
+			if(galleryImages.length === 1){
+				controlBtns.style.display = "none";
+			}
+
+        	galleryImages.forEach((galleryImg, imgIndex) => {
+				galleryImg.addEventListener("click", function (e) {
+					//console.log(imgIndex)
+					openModal(this, imgIndex);
+					if(imgIndex === 0){
+						controlBtns.lastElementChild.style.display = "none";
+					}else if(imgIndex === galleryImages.length-1){
+						controlBtns.firstElementChild.style.display = "none";
+					}else{
+						controlBtns.firstElementChild.style.display = "block";
+						controlBtns.lastElementChild.style.display = "block";
+					}
+				})
+			});
+			closeBtn.onclick = () => {
+				closeModal();
+			}
+			document.addEventListener("click", (e) => {
+				if(e.target === galleryModal){
+					closeModal();
+				}
+			});
+			
+			controlBtns.addEventListener("click", (e) => {
+				gallerySlide(e);
+			})
+
+        	function openModal(image,index){
+				let selectedImg = image.getAttribute("src");
+				modalImg.setAttribute("src", selectedImg);
+				modalImg.setAttribute("data-id",index);
+				galleryModal.classList.add("show-gallery-modal");
+			}
+			
+			function closeModal(){
+				galleryModal.classList.remove("show-gallery-modal");
+			}
+
+			function gallerySlide(btn){
+				let modalImgIndex = modalImg.getAttribute("data-id");
+				if(btn.target.classList.contains("fa-chevron-left") ){
+					modalImgIndex--;
+				}else{
+					modalImgIndex++;
+				}
+				
+				if(modalImgIndex === galleryImages.length - 1){
+					controlBtns.firstElementChild.style.display = "none";
+					controlBtns.lastElementChild.style.display = "block";
+				}else if(modalImgIndex === 0){
+					controlBtns.lastElementChild.style.display = "none";
+					controlBtns.firstElementChild.style.display = "block";
+				}else{
+					controlBtns.firstElementChild.style.display = "block";
+					controlBtns.lastElementChild.style.display = "block";
+				}
+				galleryImages.forEach((galleryImg, index) => {
+					if(modalImgIndex === index){
+						openModal(galleryImg, index);
+					}
+				})
+			}
+
+
+			let pageHref = "gallery.html";
+            activeLink(pageHref);
+        </script>
+    </body>
+</html>

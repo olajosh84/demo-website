@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html id="top">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+	</head>
+	<body>
+		<!--start navigation-->
+		<nav>
+			<div class="logo"></div>
+			<div class="menu-icon">
+				<i class="fas fa-bars"></i>
+			</div>
+			<ul class="links">
+				<div class="logo"></div>
+				<!--nav links go here-->
+			</ul>
+		</nav>
+		<!--end navigation-->
+		<!--start slider-->
+		<div class="slider-section">
+            <div class="slides">
+                <div class="slide">
+                	<img src="./assets/images/banner-2.jpeg" alt="first slide">
+                    <div class="slide-text">
+						<h2 class="slide-title">welcome to my demo website</h2>
+                    	<p class="slide-slogan">where everything is possible</p>
+                    </div>
+                    
+                </div> 
+                <div class="slide">
+                    <img src="./assets/images/subscribe-bg.jpg" alt="first slide">
+                </div> 
+                <div class="slide">
+                    <img src="./assets/images/banner-3.jpeg" alt="first slide">
+                </div> 
+                
+            </div>
+            <div class="slide-btns">
+                <!--slide btns go here-->
+            </div>
+            <!--<button class="directions prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="directions next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>-->
+        </div>
+		<!--end slider-->
+		<!--start team-->
+		<section class="team-section">
+			<header class="section-header">
+				<h2>our team</h2>
+				<div class="underline"></div>
+			</header>
+			<div class="teams">
+				<!-- team members info go here-->
+			</div>
+		</section>
+		<!--end team-->
+		<!--start projects-->
+		<section class="projects-section">
+			<header class="section-header">
+				<h2>featured projects</h2>
+				<div class="underline"></div>
+			</header>
+			<div class="projects">
+				<div class="project">
+					<img src="./assets/images/hcj2.jpeg" alt="Html CSS JS">
+					<h3>html, css and js</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+				<div class="project">
+					<img src="./assets/images/react.png" alt="React Logo">
+					<h3>react js</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+				<div class="project">
+					<img src="./assets/images/node3.jpeg" alt="Node Logo">
+					<h3>node js</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+				<div class="project">
+					<img src="./assets/images/mern1.jpeg" alt="MERN Logo">
+					<h3>mern</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+				<div class="project">
+					<img src="./assets/images/wp1.png" alt="PHP Logo">
+					<h3>wordpress</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+				<div class="project">
+					<img src="./assets/images/ci3.png" alt="CI Logo">
+					<h3>codeigniter</h3>
+					<!--<div class="project-btn">
+						<button class="btn btn-primary">view app</button>
+						<button class="btn btn-success">github</button>
+					</div>-->
+				</div>
+			</div>
+		</section>
+		<!--end projects-->
+		<!--start FAQ-->
+		<section class="faq">
+			<header class="section-header">
+				<h2>F.A.Q</h2>
+				<div class="underline"></div>
+			</header>
+            <!--all faqs and answers go here-->
+        </section>
+		<!--end FAQ-->
+		<!--start testimonials-->
+		<section class="testimonials-section">
+			<header class="section-header">
+				<h2>testimonials</h2>
+				<div class="underline"></div>
+			</header>
+			<div class="testimonials-container">
+				<div class="testimonials">
+                <!--slides go here-->
+				</div>
+				<!--<button class="testimonial-btn prev-btn-testimonial">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<button class="testimonial-btn next-btn-testimonial">
+					<i class="fas fa-chevron-right"></i>
+				</button>-->
+			</div>
+            
+        </section>
+		<!--end testimonials-->
+		<!--start footer-->
+		<footer>
+			<!--footer details go here-->
+		</footer>
+		<!--end footer-->
+		<!--back to top button-->
+		<div class="back-to-top">
+			<a href="#top"><i class="fas fa-arrow-up"></i></a>
+		</div>
+		<script src="./assets/jquery/jquery.min.js"></script>
+		<script src="./assets/js/utils.js"></script>
+		<script src="./assets/js/slider.js"></script>
+		<script src="./assets/js/faq.js"></script>
+		<script src="./assets/js/testimonials.js"></script>
+		<script src="./assets/js/team.js"></script>
+		<script>
+			const colors = ['violet', 'tomato', 'orange', 'mediumseagreen', 'dodgerblue', 'gray', 'slateblue',
+				 "olivedrab", "gold", "pink", "slateblue", "lightblue", "violet", "palegreen", "steelblue", "sandybrown", "chocolate", "crimson"
+			];
+			const projects = document.querySelectorAll(".project");
+			//random border color for each project div
+			projects.forEach((project) => {
+				for(let i = 0; i < projects.length; i++){
+					const randomIndex = Math.floor(Math.random() * colors.length);
+					project.style.borderBottomColor = colors[randomIndex];
+				}
+			});
+
+			 //FAQ
+			const faq = document.querySelector(".faq");
+            const allQuestions = questions.map((question) => {
+                return `<article class="question">
+                            <div class="question-title">
+                                <p>${question.question}</p>
+                                <div class="question-btn">
+                                    <span class="plus-icon"><i class="fas fa-plus"></i></span>
+                                    <span class="minus-icon"><i class="fas fa-minus"></i></span>
+                                </div>
+                            </div>
+                            <div class="question-text">
+                                <p>
+                                    ${question.answer} 
+                                </p>
+                            </div>
+                        </article>`
+            }).join(" ");
+            faq.innerHTML += allQuestions;
+            const faqs = document.querySelectorAll('.question');
+            faqs.forEach((faq) => {
+                faq.addEventListener("click", function(e){
+                    const currentQuestion = e.currentTarget;
+                    currentQuestion.classList.toggle('show-text');
+                    
+                    //remove the show-text on others
+                    faqs.forEach((faqItem) => {
+                        if(faqItem !== currentQuestion){
+                            faqItem.classList.remove('show-text');
+                        }
+                    })
+                })
+            });
+
+            //teams section
+            const members = document.querySelector(".teams");
+            members.innerHTML = team.map((member) => {
+            	const {id, name, image, job} = member;
+            	return `
+            		<div class="team">
+						<img src="./assets/images/${image}" alt="">
+						<div class="team-info">
+							<h4>${name}</h4>
+							<p>${job}</p>
+							<div class="social-btns-team">
+								<button class="social-icon twitter">
+									<i class="fab fa-twitter"></i>
+								</button>
+								<button class="social-icon fb">
+									<i class="fab fa-facebook"></i>
+								</button>
+								<button class="social-icon linkedin">
+									<i class="fab fa-linkedin"></i>
+								</button>
+								<button class="social-icon insta">
+									<i class="fab fa-instagram"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+            	`
+            }).join("");
+
+            let pageHref = "index.html";
+            activeLink(pageHref);
+		</script>
+
+	</body>
+</html>
