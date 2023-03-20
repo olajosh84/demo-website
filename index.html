@@ -188,10 +188,12 @@
                                     <span class="minus-icon"><i class="fas fa-minus"></i></span>
                                 </div>
                             </div>
-                            <div class="question-text">
-                                <p>
-                                    ${question.answer} 
-                                </p>
+                            <div class='question-text-container'>
+                            	<div class="question-text">
+	                                <p>
+	                                    ${question.answer} 
+	                                </p>
+	                            </div>
                             </div>
                         </article>`
             }).join(" ");
@@ -201,11 +203,20 @@
                 faq.addEventListener("click", function(e){
                     const currentQuestion = e.currentTarget;
                     currentQuestion.classList.toggle('show-text');
+                    const answerContainer = currentQuestion.lastElementChild;
+                    let answerHeight = answerContainer.firstElementChild.getBoundingClientRect().height;
+                    if(currentQuestion.classList.contains('show-text')){
+                    	answerContainer.style.height = `${answerHeight}px`;
+                    }else{
+                    	answerContainer.style.height = '0px';
+                    }
                     
                     //remove the show-text on others
                     faqs.forEach((faqItem) => {
                         if(faqItem !== currentQuestion){
+                        	const answerContainer = faqItem.lastElementChild;
                             faqItem.classList.remove('show-text');
+                            answerContainer.style.height = '0px';
                         }
                     })
                 })

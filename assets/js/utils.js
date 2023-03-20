@@ -89,7 +89,7 @@ footer.innerHTML = `
 //changing the logo color
 const logos = document.querySelectorAll('.logo');
 logos.forEach(logo => {
-    logo.innerHTML = "<a href='#''><span class='one-half-logo'>Olajeks</span> <span class='other-half-logo'>Coding</span></a>";
+    logo.innerHTML = "<a href='index.html'><span class='one-half-logo'>Olajeks</span> <span class='other-half-logo'>Coding</span></a>";
 });
 
 const pageUrl = window.location.href;
