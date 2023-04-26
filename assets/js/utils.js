@@ -11,7 +11,14 @@ menuIcon.addEventListener("click", () => {
     links.classList.toggle('show');
 })
 
-
+//add a new class "sidebar-stays" to menu-icon and sidebar list on window load
+window.addEventListener("DOMContentLoaded", () => {
+    const linksChildren = links.children;
+    for(let child of linksChildren){
+        child.classList.add('sidebar-stays');
+    }
+    menuIcon.firstElementChild.classList.add('sidebar-stays');
+})
 
 //show/hide back to top link
 window.addEventListener("scroll", () => {
@@ -107,7 +114,13 @@ function activeLink(page){
 }
 
 
-
+//remove sidebar if any element except menuicon or sidebar list is clicked
+document.body.onclick = (e) => {
+    let target = e.target;
+    if(!target.classList.contains('sidebar-stays')){
+        links.classList.remove("show");
+    }
+}
 
 
 
