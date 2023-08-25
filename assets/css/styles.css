@@ -129,8 +129,10 @@ nav{
     transition: var(--transition-2);
     z-index: 999;
 }
-
-.logo a{
+.logo{
+    width: 10rem;
+}
+/*.logo a{
     font-size: 25px;
     font-weight: 700;
     text-shadow: var(--box-shadow-dark);
@@ -140,7 +142,7 @@ nav{
 }
 .logo .other-half-logo{
     color: #0275d8;
-}
+}*/
 .links{
     display: inline-flex;
 }
